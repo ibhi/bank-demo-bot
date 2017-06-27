@@ -35,13 +35,21 @@ app.post('/hook', function (req, res) {
                     // Some API key provided
                     if (result.parameters.apiKey.any === '1234') {
                       isAuthenticated = 1;
-                      speech = 'Successfully authenticated! Now you can cheeck your balance and transactions :)';
+                      speech = 'Successfully authenticated! Now you can check your balance and transactions :)';
                     } else {
                       speech = 'Invalid API Key. Please provide a valid API Key!';
                     }
                   } else {
                     // No API key provided yet, then return whatever api.ai returns
                     speech = result.fulfillment.speech;
+                  }
+                } else if(result.action === 'getBalance') {
+                  if(result.parameters.isAuthenticated === '1.0') {
+                    // User is already authenticated
+                    const balance = Math.floor(Math.random() * 1000) + 100
+                    speech = `Your balance as of now is EUR ${balance}`;
+                  } else {
+                    speech = 'You are not authenticated!!';
                   }
                 }
             }
