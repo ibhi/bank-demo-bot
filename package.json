@@ -1,0 +1,21 @@
+{
+  "name": "bank-bot",
+  "version": "1.0.0",
+  "description": "A demo bank bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ibhi",
+  "license": "MIT",
+  "dependencies": {
+    "apiai": "^4.0.2",
+    "async": "^2.5.0",
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "node-uuid": "^1.4.8",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  }
+}
